@@ -1,0 +1,4 @@
+# TC2BA
+PASS_ADMIN = t1c2b3a4
+CORREO_ADMIN = admin.com
+
