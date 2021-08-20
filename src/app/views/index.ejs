@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<title>Club Burguer Bar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link  rel="stylesheet" href="/resources/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-black" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black w3-hover-white">Inicio</a>
+        <a href="#promociones" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Promociones</a>
+        <a href="#catalogo2" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Catálogo</a>
+        <!-- <a href="#pedidos" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Pedidos</a> -->
+        <a href="#espacio" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Mapa</a>
+        <a href="#contacto" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contactenos</a>
+        <% if(login) { %>
+            <!--<a href="perfil" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="float: right">Perfil</a> -->
+            <a href="logout" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="float: right">Cerrar Sesión</a>
+           <!--  <% /* if(rol === "administrador") { %>
+                <a href="administrador" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="float: right">Administrador</a>
+            <% } */ %> -->
+           <!-- <a href="#carrito" class="w3-bar-item w3-button w3-padding-large w3-hover-black" style="float: right">Carrito</a>-->
+        <% } else { %>
+            <a href="login" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="float: right">Iniciar Sesión</a>
+            <a href="register" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="float: right">Registrarse</a>
+        <% } %>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+        <a href="#promociones" class="w3-bar-item w3-button w3-padding-large w3-hover-black">Promociones</a>
+
+
+        <a href="#catalogo2" class="w3-bar-item w3-button w3-padding-large w3-hover-black">Catálogo</a>
+        <!--   <a href="#pedidos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">Pedidos</a> -->
+        <a href="#map" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Mapa</a>
+        <a href="#contacto" class="w3-bar-item w3-button w3-padding-large w3-hover-black">Contacto</a>
+        <% if(login) { %>
+            <a href="logout" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Cerrar Sesión</a>
+          <!--  <a href="#carrito" class="w3-bar-item w3-button w3-padding-large w3-hover-black" >Carrito</a> -->
+        <% } else { %>
+            <a href="login" class="w3-bar-item w3-button w3-padding-large w3-hover-black" style="float: right">Iniciar Sesión</a>
+            <a href="register" class="w3-bar-item w3-button w3-padding-large w3-hover-black" style="float: right">Registrarse</a>
+        <% } %>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-black w3-center" style="padding:80px 16px">
+
+    <img  class="logo" id="logo" src="resources/img/logo.png" width="300" height="300">
+
+
+    <!-- <div class="nombrediv" id="nombrediv">
+ <p>The Club Burguer Bar</p>
+     </div> -->
+
+    <!-- <p class="w3-xlarge">Hechas con Amor</p>
+    <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Comienza</button> -->
+</header>
+
+<!-- Promociones -->
+<div class="w3-row-padding w3-padding-16 w3-center" id="promociones">
+    &nbsp;
+    &nbsp;
+    <h1 class="animate__animated animate__pulse animate__infinite	infinite">Promociones</h1>
+    &nbsp;
+    <p></p>
+    <div class="w3-quarter">
+        <img src="resources/img/hamburguesa1.jpg" class="imagen" alt="Sandwich" width="300" height="300">
+        <h3 class="item-title">Clasica + Adición de papas</h3>
+        <div class="item-details">
+            <h4 class="item-price">9.900</h4>
+            <button class="item-button btn btn-primary addToCart"  ><i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir</button>
+        </div>
+        <p></p>
+    </div>
+    <div class="w3-quarter">
+        <img src="resources/img/hamburguesa2.jpg" class="imagen" alt="Steak" width="300" height="300">
+        <h3 class="item-title" >Hamburguesa clasica 2x1</h3>
+        <div class="item-details">
+            <h4 class="item-price">9.900</h4>
+            <button class="item-button btn btn-primary addToCart"  ><i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir</button>
+        </div>
+        <p></p>
+    </div>
+    <div class="w3-quarter">
+        <img src="resources/img/hamburguesa3.jpg" class="imagen" alt="Cherries" width="300" height="300">
+        <h3 class="item-title">Hamburguesa Doble peso 20% off</h3>
+        <div class="item-details">
+            <h4 class="item-price"><span class="precio-oferta">7.900</span></h4>
+            <button class="item-button btn btn-primary addToCart"  ><i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir</button>
+        </div>
+        <p></p>
+    </div>
+    <div class="w3-quarter">
+        <img src="resources/img/hamburguesa4.jpg"  class="imagen" alt="Pasta and Wine" width="300" height="300">
+        <h3 class="item-title">Hamburguesota 20% off</h3>
+        <div class="item-details">
+            <h4 class="item-price"><span class="precio-oferta">7.900</span></h4>
+            <button class="item-button btn btn-primary addToCart"><i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir</button>
+        </div>
+        <p></p>
+    </div>
+</div>
+
+<!-- Catalogo -->
+<div class="w3-row-padding w3-padding-16 w3-center" id="catalogo2">
+    &nbsp;
+    <h1 class="animate__animated animate__pulse animate__infinite	infinite">Catálogo</h1>
+    &nbsp;
+    <p></p>
+    <div class="w3-quarter">
+        <img src="resources/img/hamburguesa1.jpg" class="imagen"  alt="Sandwich"  width="300" height="300">
+        <h3 class="item-title">    Clasica</h3>
+        <div class="item-details">
+            <h4 class="item-price">9.000</h4>
+            <button class="item-button btn btn-primary addToCart"><i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir</button>
+        </div>
+        <p></p>
+    </div>
+    <div class="w3-quarter">
+        <img src="resources/img/hamburguesa2.jpg" class="imagen"  alt="Steak"  width="300" height="300">
+        <h3 class="item-title">Hamburguesitas</h3>
+        <div class="item-details">
+            <h4 class="item-price">9.000</h4>
+            <button class="item-button btn btn-primary addToCart"><i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir</button>
+        </div>
+        <p></p>
+    </div>
+    <div class="w3-quarter">
+        <img src="resources/img/hamburguesa3.jpg" class="imagen"  alt="Cherries"  width="300" height="300">
+        <h3 class="item-title">Doble peso</h3>
+        <div class="item-details">
+            <h4 class="item-price">9.900</h4>
+            <button class="item-button btn btn-primary addToCart"><i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir</button>
+        </div>
+        <p></p>
+    </div>
+    <div class="w3-quarter">
+        <img src="resources/img/hamburguesa4.jpg"  class="imagen" alt="Pasta and Wine"  width="300" height="300">
+        <h3 class="item-title">Hamburguesota</h3>
+        <div class="item-details">
+            <h4 class="item-price">9.900</h4>
+            <button class="item-button btn btn-primary addToCart" ><i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir</button>
+        </div>
+        <p></p>
+    </div>
+</div>
+
+<!-- Espacios -->
+<div class="w3-row-padding w3-padding-16 w3-center" id="espacio"></div>
+<div class="w3-row-padding w3-padding-16 w3-center" id="espacio2"></div>
+<!-- mapa -->
+<p></p>
+<div class="mapouter" id="map">
+    <h1 class="animate__animated animate__pulse animate__infinite	infinite">Mapa</h1>
+    <div class="gmap_canvas">
+        <iframe width="904" height="535" id="gmap_canvas" src="https://maps.google.com/maps?q=CR%2073%2020E%20-%205%20Bello,%20Colombia&t=&z=19&ie=UTF8&iwloc=&output=embed" frameborder="50" scrolling="no" marginheight="0" marginwidth="50"></iframe>
+    </div>
+</div>
+&nbsp;
+
+
+<!--Contacto -->
+<div class="w3-row-padding w3-padding-16 w3-center" id="contacto">
+    &nbsp;
+    <h1 class="animateanimated animate__pulse animateinfinite infinite">Contactenos</h1>
+    &nbsp;
+    <form action="contacto" method="POST">
+        <input for="nombre" type="text" class="nombrecompleto" name="nombre" placeholder="Nombre completo" required>
+        <p></p>
+        <input for="numerocontacto" type="text" class="numerocontacto" name="numerocontacto"  placeholder="Escriba un numero de contacto" required>
+        <p></p>
+        <input for="mensaje" type="text" class="mensaje" name="mensaje"  placeholder="Escriba su mensaje" required>
+        <p></p>
+        <input type="submit" class="btn-save" value="Enviar">
+    </form>
+</div>
+
+<!-- Carrito -->
+
+<% if(login) { %>
+    <div class="w3-row-padding w3-padding-16 w3-center" id="carrito">
+        &nbsp;
+        <h1 class="animate__animated animate__pulse animate__infinite	infinite">Carrito</h1>
+        <div class="shopping-cart-items shoppingCartItemsContainer">
+        </div>
+        &nbsp;
+        <div class="grid-container">
+            &nbsp;
+            <div class="row">
+                <div class="col-12">
+                    &nbsp;
+                    <div class="shopping-cart-total d-flex align-items-center">
+                        &nbsp;
+                        <p class="mb-0">Total</p>
+                        <p class="ml-4 mb-0 shoppingCartTotal"></p>
+                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                             data-delay="2000">
+                            <!-- <div class="toast-header">
+                                <span>✅</span>
+                                <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div> -->
+                         <!--   <div class="toast-body text-white">
+                                Se aumentó correctamente la cantidad
+                            </div> -->
+                        </div>
+                     <!--   <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+                                data-target="comprarModal">Comprar</button>-->
+
+                        <!-- Pop up-->
+                        <script type="text/javascript">
+                            // Popup window code
+                            function newPopup(url) {
+                                popupWindow = window.open(
+                                    url,'popUpWindow','height=300,width=400,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+                            }
+                        </script>
+                        <p ><a type="submit" href="JavaScript:newPopup('venta');" class="btn-save">Comprar</a></p>
+                        <input type="button" class="btn-save" value="Aceptar" onclick="location.reload()"/>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--Script-->
+    <script>
+
+
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") === -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+        //min 12
+        var container = document.querySelector('.shoppingCartItemsContainer')
+
+
+
+        const botones = document.querySelectorAll('.addToCart');
+        botones.forEach(boton => {
+            boton.addEventListener('click', agregarCarrito )
+        })
+
+
+        function agregarCarrito(event){
+            const boton = event.target;
+            const item = boton.closest('.w3-quarter')
+            const titulo = item.querySelector('.item-title').textContent;
+            const imagen = item.querySelector('.imagen').src;
+            const precio = item.querySelector('.item-price').textContent;
+            //console.log(titulo +  " = "  +  precio);
+            lugar_delcarro (titulo, precio,imagen)
+        }
+
+        function lugar_delcarro (titulo, precio,imagen){
+            console.log(titulo,precio,imagen)
+            const fila_carrito = document.createElement('div');
+            fila_carrito.innerHTML = `
+
+      <div class="row shoppingCartItem">
+                    <div class="col-6">
+                        <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                            <img src=${imagen} class="shopping-cart-image">
+                            <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">${titulo}
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                            <p class="item-price mb-0 shoppingCartItemPrice">${precio}</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                         <div
+                            class="shopping-cart-quantity">
+                         <!--   <button class="btn btn-danger buttonDelete" type="button">X</button>-->
+                        </div>
+                    </div>
+                </div>`;
+            container.append(fila_carrito);
+
+            actualizacion_carrito()
+        }
+
+        function actualizacion_carrito(){
+            let total = 0;
+            const config_total = document.querySelector('.shoppingCartTotal')
+            const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
+
+            shoppingCartItems.forEach(shoppingCartItem  => {
+                const item_price = shoppingCartItem.querySelector('.shoppingCartItemPrice')
+
+                const precio_elemento = Number(item_price.textContent);
+
+               /* const cantidad = shoppingCartItem.querySelector('.shoppingCartItemQuantity')
+                const valor_cantidad = Number(cantidad.value)*/
+
+                total = total + (precio_elemento )
+
+                console.log(total)
+
+                config_total.innerHTML = `${total.toFixed(3)}`
+            });
+
+        }
+
+        function comprarButtonClicked() {
+            Container.innerHTML = '';
+            actualizacion_carrito();
+        }
+
+    </script>
+
+<% } else { %>
+
+    <h1 class="animate__animated animate__pulse animate__infinite	infinite">Para ver el carrito, Inicie sesión</h1>
+
+<% } %>
+
+
+<!-- Chat -->
+<% if(login) { %>
+    <h1 class="animate__animated animate__pulse animate__infinite	infinite">Chat</h1>
+<div class="chat" id="chat">
+<script id="cid0020000290222567010" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 600px;height: 400px;">{"handle":"tc2bapp","arch":"js","styles":{"a":"161616","b":100,"c":"FFFFFF","d":"FFFFFF","k":"202020","l":"202020","m":"202020","n":"FFFFFF","p":"10","q":"202020","r":100,"usricon":0,"surl":0,"cnrs":"0.25","fwtickm":1}}</script>
+</div>
+<% } %>
+
+
+
+<!--Frase -->
+<div class="w3-container w3-black w3-center  w3-padding-64">
+    <h1 class=" animate__animated animate__heartBeat animate__infinite infinite" class="w3-bar-item w3-button-xlarge">Vive la vida, tal como es</h1>
+</div>
+
+<p class="derechos">*La aplicación TC2BA hace parte de un ejercicio académico en el programa Técnico en Programación de Software, en convenio Institución Universitaria Salazar y Herrera - SENA, 2021.
+    Los autores:  Santiago Rodriguez Mojica, Santiago Monrroy Henao y Santiago Hernández Chalarca* Los derechos de uso y ejecución están sujetos a Licencia Creative Commons, o derechos reservados de autor según sea el caso (consulte co.creativecommons.org)</p>
+<!-- Footer -->
+<!-- <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+    <div class="w3-xlarge w3-padding-32">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+</footer> -->
+
+<!--Boton canasta -->
+<% if(login) { %>
+<a href="#carrito" class="float-carrito" >
+    <i class="fa fa-shopping-basket my-float"></i>
+</a>
+<a href="#chat" class="float-chat" >
+    <i class="fa fa-comments my-float" aria-hidden="true"></i>
+</a>
+<% } %>
+
+
+
+
+</body>
+</html>
